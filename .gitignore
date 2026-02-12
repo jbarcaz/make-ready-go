@@ -1,5 +1,4 @@
 # Angular
-/dist
 /.angular/cache
 /src/**/*.ngfactory.ts
 /src/**/*.ngstyle.ts
