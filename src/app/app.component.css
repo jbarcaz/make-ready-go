@@ -1,0 +1,29 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+nav a {
+  margin-left: 16px;
+}
+
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.app-name {
+  font-size: 20px;
+  font-weight: 500;
+}

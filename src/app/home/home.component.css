@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+
+.page-container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-section {
+  margin-bottom: 48px;
+}
+
+.content-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px !important;
+  transition: box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  color: #3f51b5 !important;
+  margin-bottom: 12px !important;
+}
+
+.card-title span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.card-subtitle {
+  font-size: 16px !important;
+  color: #666 !important;
+  margin-top: 8px !important;
+}
+
+mat-card-content {
+  padding: 24px 16px !important;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+mat-card-actions {
+  padding: 16px !important;
+  background-color: #fafafa;
+  border-radius: 0 0 12px 12px;
+}
+
+button[mat-raised-button] {
+  padding: 8px 24px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+button[mat-raised-button]:hover {
+  transform: translateY(-2px);
+}
+
+h2 {
+  margin-top: 24px;
+  color: #3f51b5;
+}
+
+h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+ul {
+  line-height: 1.8;
+}
+
+mat-divider {
+  margin: 24px 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+mat-card-title.big {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

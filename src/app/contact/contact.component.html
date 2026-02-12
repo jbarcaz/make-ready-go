@@ -1,0 +1,147 @@
+<div class="page-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Contact Us</mat-card-title>
+      <mat-card-subtitle>Get your free quote here</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form
+        class="contact-form"
+        #contactForm="ngForm"
+        (ngSubmit)="sendEmail(contactForm)"
+        novalidate
+      >
+
+        <!-- 🛡 Honeypot (hidden, bots only) -->
+        <input
+          type="text"
+          name="company"
+          ngModel
+          class="honeypot"
+          autocomplete="off"
+        />
+
+        <!-- Name -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Your name"
+            name="name"
+            ngModel
+            required
+            minlength="2"
+          />
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-error *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="your@email.com"
+            name="email"
+            ngModel
+            required
+            email
+          />
+          <mat-icon matPrefix>email</mat-icon>
+          <mat-error *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid">
+            Enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Subject -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Subject</mat-label>
+          <input
+            matInput
+            placeholder="What's this about?"
+            name="subject"
+            ngModel
+            required
+          />
+          <mat-error *ngIf="contactForm.submitted && contactForm.controls['subject']?.invalid">
+            Subject is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Message -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Message</mat-label>
+          <textarea
+            matInput
+            rows="6"
+            placeholder="Your message here..."
+            name="message"
+            ngModel
+            required
+            minlength="10"
+          ></textarea>
+          <mat-error *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
+            Message must be at least 10 characters
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Buttons -->
+        <div class="button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loading"
+          >
+            <mat-icon>send</mat-icon>
+            {{ loading ? 'Sending…' : 'Send Message' }}
+          </button>
+
+          <button
+            mat-button
+            type="button"
+            (click)="clearForm(contactForm)"
+            [disabled]="loading"
+          >
+            Clear
+          </button>
+        </div>
+
+        <!-- Success -->
+        <p class="success" *ngIf="success">
+          ✅ Your message has been sent successfully!
+        </p>
+
+        <!-- Error -->
+        <p class="error" *ngIf="error">
+          ❌ Something went wrong. Please try again.
+        </p>
+
+      </form>
+
+      <mat-divider></mat-divider>
+
+      <!-- Contact Info (unchanged) -->
+      <div class="contact-info">
+        <h3>Other Ways to Reach Us</h3>
+        <mat-list>
+          <a mat-list-item href="tel:+12106461496">
+            <mat-icon matListItemIcon>phone</mat-icon>
+            <div matListItemTitle>Phone</div>
+            <div matListItemLine>(210)-646-1496</div>
+          </a>
+          <mat-list-item>
+            <mat-icon matListItemIcon>schedule</mat-icon>
+            <div matListItemTitle>Hours</div>
+            <div matListItemLine>Monday - Friday, 9am - 5pm</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>
