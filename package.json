@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production"
+    "build:prod": "ng build --configuration production",
+    "deploy": "npm run build:prod && ngh --dir=dist/angular21-app"
   },
   "private": true,
   "dependencies": {
