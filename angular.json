@@ -34,7 +34,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/make-ready-go/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
