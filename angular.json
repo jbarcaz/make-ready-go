@@ -24,7 +24,8 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets/"
-              }
+              },
+              "CNAME"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
