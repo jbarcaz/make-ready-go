@@ -5,6 +5,7 @@
 mat-card {
   max-width: 800px;
   margin: 0 auto;
+  padding: 8px;
 }
 
 h2 {
@@ -34,4 +35,33 @@ mat-card-actions {
   padding: 16px;
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+mat-card-actions button {
+  min-width: 140px;
+}
+
+mat-card-subtitle {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 12px;
+  }
+
+  mat-card {
+    margin: 0;
+    padding: 4px;
+  }
+
+  mat-card-actions {
+    padding: 12px;
+    flex-direction: column;
+  }
+
+  mat-card-actions button {
+    width: 100%;
+  }
 }

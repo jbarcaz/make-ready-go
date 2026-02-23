@@ -29,6 +29,7 @@ export class Quote {
   loading = false;
   success = false;
   error = false;
+  phone = '';
   // Attachment upload temporarily disabled until EmailJS subscription is enabled.
   // selectedPhotoCount = 0;
 
@@ -75,7 +76,7 @@ export class Quote {
     this.error = false;
 
     emailjs.send(
-      'service_k38e3ww',
+      'service_2t59t3t',
       'template_fwk9i3x',
       {
         name: form.value.name,
@@ -95,6 +96,7 @@ export class Quote {
       .then(() => {
         this.success = true;
         form.resetForm();
+        this.phone = '';
         this.navigateToSuccess();
       })
       .catch((err) => {
@@ -110,6 +112,29 @@ export class Quote {
   //   const input = event.target as HTMLInputElement | null;
   //   this.selectedPhotoCount = input?.files?.length ?? 0;
   // }
+
+  onPhoneInput(event: Event): void {
+    const input = event.target as HTMLInputElement | null;
+    const formatted = this.formatPhone(input?.value ?? '');
+    if (input) {
+      input.value = formatted;
+    }
+    this.phone = formatted;
+  }
+
+  private formatPhone(value: string): string {
+    const digits = value.replace(/\D/g, '').slice(0, 10);
+
+    if (digits.length < 4) {
+      return digits;
+    }
+
+    if (digits.length < 7) {
+      return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    }
+
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)} ${digits.slice(6)}`;
+  }
 
   navigateToSuccess(): void {
     // Use Angular's router to navigate to the success page

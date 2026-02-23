@@ -28,7 +28,7 @@
         <mat-form-field appearance="outline" class="grid-item">
           <mat-label>Full Name</mat-label>
           <input matInput name="name" ngModel required minlength="2" />
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['name']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['name']?.touched) && quoteForm.controls['name']?.invalid">
             Name is required
           </mat-error>
         </mat-form-field>
@@ -36,31 +36,46 @@
         <mat-form-field appearance="outline" class="grid-item">
           <mat-label>Company / Property Name</mat-label>
           <input matInput name="company" ngModel required minlength="2" />
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['company']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['company']?.touched) && quoteForm.controls['company']?.invalid">
             Company is required
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="grid-item">
           <mat-label>Phone</mat-label>
-          <input matInput type="tel" name="phone" ngModel required />
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['phone']?.invalid">
-            Phone is required
+          <input
+            matInput
+            type="tel"
+            name="phone"
+            [(ngModel)]="phone"
+            (input)="onPhoneInput($event)"
+            required
+            pattern="^\(\d{3}\)\s\d{3}\s\d{4}$"
+            maxlength="14"
+          />
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['phone']?.touched) && quoteForm.controls['phone']?.errors?.['required']">
+            Phone is required.
+          </mat-error>
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['phone']?.touched) && quoteForm.controls['phone']?.errors?.['pattern']">
+            Enter a valid phone number.
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="grid-item">
           <mat-label>Email</mat-label>
           <input matInput type="email" name="email" ngModel required email />
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['email']?.invalid">
-            Enter a valid email
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['email']?.touched) && quoteForm.controls['email']?.errors?.['required']">
+            Email is required.
+          </mat-error>
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['email']?.touched) && quoteForm.controls['email']?.errors?.['email']">
+            Enter a valid email.
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="grid-item grid-span-2">
           <mat-label>Property Address</mat-label>
           <input matInput name="propertyAddress" ngModel required minlength="5" />
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['propertyAddress']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['propertyAddress']?.touched) && quoteForm.controls['propertyAddress']?.invalid">
             Property address is required
           </mat-error>
         </mat-form-field>
@@ -72,7 +87,7 @@
               {{ service }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['serviceType']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['serviceType']?.touched) && quoteForm.controls['serviceType']?.invalid">
             Select a service type
           </mat-error>
         </mat-form-field>
@@ -84,7 +99,7 @@
               {{ propertyType }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['propertyType']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['propertyType']?.touched) && quoteForm.controls['propertyType']?.invalid">
             Select a property type
           </mat-error>
         </mat-form-field>
@@ -115,7 +130,7 @@
               {{ bedroom }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['bedrooms']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['bedrooms']?.touched) && quoteForm.controls['bedrooms']?.invalid">
             Select number of bedrooms
           </mat-error>
         </mat-form-field>
@@ -127,14 +142,14 @@
               {{ timeline }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['timeline']?.invalid">
+          <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['timeline']?.touched) && quoteForm.controls['timeline']?.invalid">
             Select a timeline
           </mat-error>
         </mat-form-field>
       </div>
 
       <div class="button-row">
-        <button class="submit-btn" type="submit" [disabled]="loading">
+        <button class="submit-btn" type="submit" [disabled]="loading || quoteForm.invalid">
           {{ loading ? 'Sending...' : 'Request Quote' }}
         </button>
       </div>

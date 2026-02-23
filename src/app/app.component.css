@@ -2,6 +2,10 @@
   flex: 1 1 auto;
 }
 
+mat-toolbar {
+  gap: 12px;
+}
+
 nav a {
   margin-left: 16px;
 }
@@ -26,4 +30,68 @@ main {
 .app-name {
   font-size: 20px;
   font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  main {
+    padding: 20px 16px;
+  }
+
+  nav a {
+    margin-left: 8px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  mat-toolbar {
+    min-height: 56px;
+    height: 56px;
+    padding: 6px 10px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  nav {
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav a {
+    margin-left: 0;
+    min-width: 0;
+    padding: 0 8px;
+    line-height: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .logo {
+    height: 36px;
+    margin-right: 0;
+    flex: 0 0 auto;
+  }
+
+  main {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  nav a {
+    font-size: 12px;
+    padding: 0 6px;
+  }
 }

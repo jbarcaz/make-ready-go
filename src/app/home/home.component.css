@@ -111,3 +111,46 @@ mat-card-title.big {
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 12px;
+  }
+
+  .hero-image {
+    max-height: 280px;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    gap: 10px;
+    font-size: clamp(1.2rem, 6vw, 1.8rem) !important;
+    line-height: 1.2;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    height: 46px;
+  }
+
+  .card-subtitle {
+    font-size: 14px !important;
+  }
+
+  mat-card-content {
+    padding: 16px 12px !important;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  mat-card-actions {
+    padding: 12px !important;
+  }
+
+  button[mat-raised-button] {
+    width: 100%;
+  }
+}

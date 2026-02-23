@@ -65,12 +65,14 @@
           <mat-label>Phone Number</mat-label>
           <input
             matInput
-            type="phone"
+            type="tel"
             placeholder=""
             name="phone"
-            ngModel
+            [(ngModel)]="phone"
+            (input)="onPhoneInput($event)"
             required
-            phone
+            pattern="^\(\d{3}\)\s\d{3}\s\d{4}$"
+            maxlength="14"
           />
           <mat-icon matPrefix>phone</mat-icon>
           <mat-error *ngIf="contactForm.submitted && contactForm.controls['phone']?.invalid">
