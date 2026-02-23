@@ -4,7 +4,6 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { RouterLink } from "@angular/router";
-import { CarouselComponent } from "../carousel/carousel";
 
 @Component({
   selector: "app-home",
@@ -15,7 +14,6 @@ import { CarouselComponent } from "../carousel/carousel";
     MatDividerModule,
     MatGridListModule,
     RouterLink,
-    CarouselComponent,
   ],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
