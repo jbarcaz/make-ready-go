@@ -33,22 +33,22 @@ export class Quote {
   // selectedPhotoCount = 0;
 
   serviceTypes: string[] = [
-    'Make Ready Cleaning',
-    'Move-In / Move-Out Cleaning',
-    'Deep Cleaning',
-    'Recurring Maintenance',
-    'Post-Construction Cleaning',
+    'Make Ready – Full Service',
+    'Trash Out',
+    'Grounds',
+    'Appliance Moving',
+    'Maintenance',
     'Other'
   ];
 
   bedroomOptions: string[] = ['Studio', '1', '2', '3', '4', '5+'];
 
   timelineOptions: string[] = [
-    'ASAP (Within 24-48 hours)',
-    'This Week',
-    'Next 2 Weeks',
-    'This Month',
-    'Flexible'
+    'Standard Turn (3–5 Days)',
+    '48-Hour Turn',
+    '24-Hour Rush',
+    'Flexible Timeline',
+    'Emergency Service'
   ];
 
   propertyTypes: string[] = [
