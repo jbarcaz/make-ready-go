@@ -1,0 +1,47 @@
+.confirmation-container {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(180deg, #f8fbf9 0%, #ffffff 100%);
+}
+
+.confirmation-card {
+  width: min(560px, 100%);
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5ece7;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(13, 61, 35, 0.08);
+}
+
+.success-icon {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #1e8e4b;
+  color: #ffffff;
+}
+
+.success-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+h1 {
+  margin: 0 0 0.65rem;
+  color: #133b24;
+  font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  color: #3f5347;
+  font-size: 1.03rem;
+  line-height: 1.6;
+}

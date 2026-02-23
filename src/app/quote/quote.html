@@ -1,0 +1,152 @@
+<div class="page-container">
+  <mat-card class="quote-card">
+    <h1 class="card-title">Get a Quote</h1>
+    <p class="card-subtitle">
+      Need fast and reliable make-ready services? Tell us about your project and
+      we'll respond within 24 hours.
+    </p>
+
+    <div class="section-divider">
+      <span>Request a Quote</span>
+    </div>
+
+    <form
+      class="quote-form"
+      #quoteForm="ngForm"
+      (ngSubmit)="sendQuoteRequest(quoteForm)"
+      novalidate
+    >
+      <input
+        type="text"
+        name="companyTrap"
+        ngModel
+        class="honeypot"
+        autocomplete="off"
+      />
+
+      <div class="form-grid">
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Full Name</mat-label>
+          <input matInput name="name" ngModel required minlength="2" />
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['name']?.invalid">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Company / Property Name</mat-label>
+          <input matInput name="company" ngModel required minlength="2" />
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['company']?.invalid">
+            Company is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Phone</mat-label>
+          <input matInput type="tel" name="phone" ngModel required />
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['phone']?.invalid">
+            Phone is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" ngModel required email />
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['email']?.invalid">
+            Enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item grid-span-2">
+          <mat-label>Property Address</mat-label>
+          <input matInput name="propertyAddress" ngModel required minlength="5" />
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['propertyAddress']?.invalid">
+            Property address is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Type of Service</mat-label>
+          <mat-select name="serviceType" ngModel required>
+            <mat-option *ngFor="let service of serviceTypes" [value]="service">
+              {{ service }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['serviceType']?.invalid">
+            Select a service type
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Property Type</mat-label>
+          <mat-select name="propertyType" ngModel required>
+            <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
+              {{ propertyType }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['propertyType']?.invalid">
+            Select a property type
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Attachment upload temporarily disabled until EmailJS subscription is enabled.
+        <div class="grid-item">
+          <label class="upload-label" for="photoUpload">
+            <mat-icon>photo_camera</mat-icon>
+            Upload Photos
+          </label>
+          <input
+            id="photoUpload"
+            type="file"
+            class="upload-input"
+            multiple
+            (change)="onPhotosSelected($event)"
+          />
+          <p class="upload-count" *ngIf="selectedPhotoCount > 0">
+            {{ selectedPhotoCount }} photo(s) selected
+          </p>
+        </div>
+        -->
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Number of Bedrooms</mat-label>
+          <mat-select name="bedrooms" ngModel required>
+            <mat-option *ngFor="let bedroom of bedroomOptions" [value]="bedroom">
+              {{ bedroom }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['bedrooms']?.invalid">
+            Select number of bedrooms
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-item">
+          <mat-label>Timeline / Urgency</mat-label>
+          <mat-select name="timeline" ngModel required>
+            <mat-option *ngFor="let timeline of timelineOptions" [value]="timeline">
+              {{ timeline }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="quoteForm.submitted && quoteForm.controls['timeline']?.invalid">
+            Select a timeline
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="button-row">
+        <button class="submit-btn" type="submit" [disabled]="loading">
+          {{ loading ? 'Sending...' : 'Request Quote' }}
+        </button>
+      </div>
+
+      <p class="success" *ngIf="success">Your quote request has been sent successfully.</p>
+      <p class="error" *ngIf="error">Something went wrong. Please try again.</p>
+    </form>
+
+    <div class="trust-row">
+      <span><mat-icon>check</mat-icon>Honest pricing</span>
+      <span><mat-icon>check</mat-icon>Fast turnaround</span>
+      <span><mat-icon>check</mat-icon>Professional service</span>
+    </div>
+  </mat-card>
+</div>

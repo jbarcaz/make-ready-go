@@ -1,11 +1,32 @@
 <div class="page-container">
   <mat-card>
-    <mat-card-header>
-      <mat-card-title>Contact Us</mat-card-title>
-      <mat-card-subtitle>Get your free quote here</mat-card-subtitle>
-    </mat-card-header>
+    <div class="card-header">
+      <h1 class="card-title">Contact Us</h1>
+      <p class="card-subtitle">
+        Have a question or need assistance? Send us a message and we'll get back
+        to you promptly.
+      </p>
+    </div>
 
     <mat-card-content>
+      
+      <!-- Contact Info (unchanged) -->
+      <div class="contact-info">
+        <!-- <h3>Have a question or need assistance? Send us a message and we'll get back to you promptly.</h3> -->
+        <mat-list>
+          <a mat-list-item href="tel:+12106461496">
+            <mat-icon matListItemIcon>phone</mat-icon>
+            <div matListItemTitle>Phone</div>
+            <div matListItemLine>(210)-646-1496</div>
+          </a>
+          <mat-list-item>
+            <mat-icon matListItemIcon>email</mat-icon>
+            <div matListItemTitle>Email</div>
+            <div matListItemLine>info@makereadygo.com</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- <mat-divider></mat-divider> -->
       <form
         class="contact-form"
         #contactForm="ngForm"
@@ -24,7 +45,7 @@
 
         <!-- Name -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Name</mat-label>
+          <mat-label>Your Name</mat-label>
           <input
             matInput
             placeholder="Your name"
@@ -39,42 +60,27 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- Email -->
+        <!-- phone -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Email</mat-label>
+          <mat-label>Phone Number</mat-label>
           <input
             matInput
-            type="email"
-            placeholder="your@email.com"
-            name="email"
+            type="phone"
+            placeholder=""
+            name="phone"
             ngModel
             required
-            email
+            phone
           />
-          <mat-icon matPrefix>email</mat-icon>
-          <mat-error *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid">
-            Enter a valid email
-          </mat-error>
-        </mat-form-field>
-
-        <!-- Subject -->
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Subject</mat-label>
-          <input
-            matInput
-            placeholder="What's this about?"
-            name="subject"
-            ngModel
-            required
-          />
-          <mat-error *ngIf="contactForm.submitted && contactForm.controls['subject']?.invalid">
-            Subject is required
+          <mat-icon matPrefix>phone</mat-icon>
+          <mat-error *ngIf="contactForm.submitted && contactForm.controls['phone']?.invalid">
+            Enter a valid phone number
           </mat-error>
         </mat-form-field>
 
         <!-- Message -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Message</mat-label>
+          <mat-label>Your Message</mat-label>
           <textarea
             matInput
             rows="6"
@@ -97,17 +103,7 @@
             type="submit"
             [disabled]="loading"
           >
-            <mat-icon>send</mat-icon>
-            {{ loading ? 'Sending…' : 'Send Message' }}
-          </button>
-
-          <button
-            mat-button
-            type="button"
-            (click)="clearForm(contactForm)"
-            [disabled]="loading"
-          >
-            Clear
+            {{ loading ? 'Sending…' : 'Request a Call Back' }}
           </button>
         </div>
 
@@ -120,28 +116,7 @@
         <p class="error" *ngIf="error">
           ❌ Something went wrong. Please try again.
         </p>
-
       </form>
-
-      <mat-divider></mat-divider>
-
-      <!-- Contact Info (unchanged) -->
-      <div class="contact-info">
-        <h3>Other Ways to Reach Us</h3>
-        <mat-list>
-          <a mat-list-item href="tel:+12106461496">
-            <mat-icon matListItemIcon>phone</mat-icon>
-            <div matListItemTitle>Phone</div>
-            <div matListItemLine>(210)-646-1496</div>
-          </a>
-          <mat-list-item>
-            <mat-icon matListItemIcon>schedule</mat-icon>
-            <div matListItemTitle>Hours</div>
-            <div matListItemLine>Monday - Friday, 9am - 5pm</div>
-          </mat-list-item>
-        </mat-list>
-      </div>
-
     </mat-card-content>
   </mat-card>
 </div>

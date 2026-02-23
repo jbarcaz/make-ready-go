@@ -53,8 +53,7 @@ export class ContactComponent {
       'template_fwk9i3x',
       {
         name: form.value.name,
-        email: form.value.email,
-        subject: form.value.subject,
+        phone: form.value.phone,
         message: form.value.message
       },
       'HRChD0YVgF_H1qNoN'
@@ -62,6 +61,7 @@ export class ContactComponent {
     .then(() => {
       this.success = true;
       form.resetForm();
+      this.navigateToSuccess();
     })
     .catch((err) => {
       console.error(err);
@@ -76,5 +76,10 @@ export class ContactComponent {
     form.resetForm();
     this.success = false;
     this.error = false;
+  }
+
+  navigateToSuccess(): void {
+    // Use Angular's router to navigate to the success page
+    window.location.href = '#/success';
   }
 }

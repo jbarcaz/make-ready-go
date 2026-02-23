@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { RouterLink } from '@angular/router';
-import { CarouselComponent } from '../carousel/carousel';
+import { Component } from "@angular/core";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { RouterLink } from "@angular/router";
+import { CarouselComponent } from "../carousel/carousel";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   standalone: true,
   imports: [
     MatCardModule,
@@ -15,18 +15,14 @@ import { CarouselComponent } from '../carousel/carousel';
     MatDividerModule,
     MatGridListModule,
     RouterLink,
-    CarouselComponent
+    CarouselComponent,
   ],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  tiles: any[] = [
-    {text: 'One', cols: 4, rows: 1, color: 'lightblue'},
-    {text: 'One', cols: 4, rows: 1, color: 'lightblue'},
-  ];
-
-  // contactUs() {
-  //   router
-  // }
+  title =
+    "Fast, Reliable, Move-In Ready Solutions for Property Managers".toUpperCase();
+  body =
+    "Make Ready Go is your trusted partner for fast, reliable apartment turns. We help property managers reduce vacancy time, protect asset value, and get units move-in ready without delays.";
 }
