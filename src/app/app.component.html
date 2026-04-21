@@ -1,7 +1,12 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" routerLink="/" aria-label="Make Ready Go home">
-      <img src="assets/logo.png" alt="Make Ready Go logo" class="brand-logo" decoding="async" />
+      <img
+        [src]="isDarkMode ? 'assets/logo_white.png' : 'assets/logo.png'"
+        alt="Make Ready Go logo"
+        class="brand-logo"
+        decoding="async"
+      />
       <div class="brand-copy">
         <span class="brand-name">Make Ready Go</span>
         <span class="brand-tagline">Apartment turns without the scramble</span>
