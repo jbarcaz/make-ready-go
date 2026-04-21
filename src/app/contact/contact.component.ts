@@ -6,8 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
 import emailjs from 'emailjs-com';
 
 @Component({
@@ -20,9 +18,7 @@ import emailjs from 'emailjs-com';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
-    MatDividerModule,
-    MatListModule
+    MatIconModule
   ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']

@@ -1,97 +1,188 @@
-.spacer {
-  flex: 1 1 auto;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(249, 251, 255, 0.88);
+  border-bottom: 1px solid var(--line);
 }
 
-mat-toolbar {
-  gap: 12px;
-}
-
-nav a {
-  margin-left: 16px;
-}
-
-nav a.active {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-main {
-  padding: 32px;
-  max-width: 1200px;
+.header-inner {
+  max-width: var(--content-width);
   margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
-  margin-right: 16px;
-  cursor: pointer;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  min-width: 0;
 }
 
-.app-name {
-  font-size: 20px;
-  font-weight: 500;
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  color: var(--heading);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.brand-tagline {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--heading);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-toggle mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-nav a[mat-button] {
+  color: var(--text);
+  border-radius: 999px;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.site-nav a[mat-button].active {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.header-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding-inline: 22px !important;
+  min-height: 46px;
+  box-shadow: var(--shadow-md);
+}
+
+.app-shell {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 28px 24px 72px;
 }
 
 @media (max-width: 900px) {
-  main {
-    padding: 20px 16px;
+  .header-inner {
+    padding: 12px 16px;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  nav a {
-    margin-left: 8px;
-    padding: 0 10px;
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
-}
 
-@media (max-width: 700px) {
-  mat-toolbar {
-    min-height: 56px;
-    height: 56px;
-    padding: 6px 10px;
-    flex-wrap: nowrap;
+  .site-nav {
+    width: 100%;
+    order: 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
+    transform: translateY(-8px);
+    transition:
+      max-height 220ms ease,
+      opacity 180ms ease,
+      transform 220ms ease,
+      padding-top 220ms ease;
   }
 
-  nav {
-    width: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 4px;
+  .site-nav.open {
+    max-height: 320px;
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: 6px;
+  }
+
+  .site-nav a[mat-button],
+  .header-cta {
+    width: 100%;
     justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    white-space: normal;
+    min-height: 48px;
+    padding-inline: 16px !important;
   }
 
-  nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  nav a {
-    margin-left: 0;
-    min-width: 0;
-    padding: 0 8px;
-    line-height: 32px;
-    height: 32px;
-    font-size: 13px;
-  }
-
-  .logo {
-    height: 36px;
-    margin-right: 0;
-    flex: 0 0 auto;
-  }
-
-  main {
-    padding: 16px 10px;
+  .app-shell {
+    padding: 20px 16px 56px;
   }
 }
 
-@media (max-width: 420px) {
-  nav a {
-    font-size: 12px;
-    padding: 0 6px;
+@media (max-width: 560px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .brand {
+    gap: 10px;
+    min-width: 0;
+    max-width: calc(100% - 60px);
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .brand-name,
+  .brand-tagline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand-tagline {
+    font-size: 0.76rem;
   }
 }

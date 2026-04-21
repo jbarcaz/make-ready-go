@@ -1,16 +1,40 @@
-<mat-toolbar color="primary">
-  <a routerLink="/" aria-label="Home">
-    <img src="assets/logo_white.png" alt="Make Ready Go" class="logo">
-  </a>
-  <span class="spacer"></span>
-  <nav>
-    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
-    <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
-    <a mat-button routerLink="/get-a-quote" routerLinkActive="active">Get a Quote</a>
-  </nav>
-</mat-toolbar>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" routerLink="/" aria-label="Make Ready Go home">
+      <img src="assets/logo.png" alt="Make Ready Go logo" class="brand-logo" decoding="async" />
+      <div class="brand-copy">
+        <span class="brand-name">Make Ready Go</span>
+        <span class="brand-tagline">Apartment turns without the scramble</span>
+      </div>
+    </a>
 
-<main>
+    <button
+      type="button"
+      class="menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+    >
+      <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <nav
+      id="primary-nav"
+      class="site-nav"
+      [class.open]="mobileMenuOpen"
+      aria-label="Primary"
+    >
+      <a mat-button routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">About</a>
+      <a mat-button routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
+      <a class="header-cta" mat-flat-button routerLink="/get-a-quote" routerLinkActive="active" (click)="closeMobileMenu()">
+        Request a Quote
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="app-shell">
   <router-outlet></router-outlet>
 </main>

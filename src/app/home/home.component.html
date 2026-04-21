@@ -1,26 +1,179 @@
-<div class="page-container">
-  <img class="hero-image" src="assets/car_img.jpeg" alt="Make Ready Go service vehicle" />
-  <mat-card class="content-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title class="card-title">
-        <img class="logo" src="assets/logo.png" alt="Make Ready Go logo" />
-        <span>{{title}}</span>
-      </mat-card-title>
-      <mat-card-subtitle class="card-subtitle"
-        >Got a move? You've found the right place</mat-card-subtitle
-      >
-    </mat-card-header>
-
-    <mat-card-content>
-      <p class="description">
-        {{body}}
+<div class="home-page">
+  <section class="hero-section">
+    <div class="hero-copy">
+      <p class="eyebrow">San Antonio make ready partner for multifamily teams</p>
+      <h1>Move units from vacant to move-in ready without chasing vendors.</h1>
+      <p class="hero-text">
+        Make Ready Go helps property managers and apartment teams turn units
+        faster with reliable execution, clear communication, and a process that
+        feels easier from the first request.
       </p>
-    </mat-card-content>
 
-    <mat-card-actions align="end">
-      <button mat-raised-button color="primary" routerLink="/quote">
-        Get a free quote today!
-      </button>
-    </mat-card-actions>
-  </mat-card>
+      <div class="hero-actions">
+        <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
+          <span>Request a Quote</span>
+          <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+        </a>
+        <a mat-stroked-button class="secondary-btn" routerLink="/services">
+          View Services
+        </a>
+      </div>
+
+      <div class="hero-points" aria-label="Key trust points">
+        @for (point of heroPoints; track point) {
+          <div class="hero-point">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ point }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="Make Ready Go in action">
+      <div class="hero-card hero-card-primary">
+        <img
+          src="assets/car_img.jpeg"
+          alt="Make Ready Go service vehicle parked on site"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+
+      <div class="hero-info-card">
+        <div class="hero-info-copy">
+          <span class="panel-kicker">Trusted field support</span>
+          <h2>Reliable turn support with less back-and-forth.</h2>
+          <p>
+            Full-service make ready help, responsive communication, and practical
+            support for busy leasing and maintenance teams.
+          </p>
+        </div>
+
+        <div class="hero-info-metrics">
+          @for (metric of metrics; track metric.label) {
+            <div class="stat-item">
+              <strong>{{ metric.value }}</strong>
+              <span>{{ metric.label }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="hero-contact-row">
+          <div class="hero-mini-card">
+            <mat-icon>call</mat-icon>
+            <div>
+              <strong>(210) 646-1496</strong>
+              <span>Talk with Make Ready Go</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-card">
+            <mat-icon>mail</mat-icon>
+            <div>
+              <strong>office@mreadygo.com</strong>
+              <span>Clear follow-up and next steps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-strip" aria-label="Reasons to trust Make Ready Go">
+    @for (item of proofItems; track item.title) {
+      <div class="proof-item">
+        <div class="proof-icon">
+          <mat-icon>{{ item.icon }}</mat-icon>
+        </div>
+        <div>
+          <strong>{{ item.title }}</strong>
+          <span>{{ item.description }}</span>
+        </div>
+      </div>
+    }
+  </section>
+
+  <section class="content-section compact-section">
+    <div class="section-heading">
+      <p class="section-kicker">Why teams choose us</p>
+      <h2>The value is not just labor. It is confidence.</h2>
+      <p>
+        Property managers need a partner who removes friction instead of creating
+        more coordination work. Every section below exists to answer one question:
+        why trust Make Ready Go with a turn that matters?
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section process-section compact-section">
+    <div class="section-heading">
+      <p class="section-kicker">How it works</p>
+      <h2>Simple enough to move quickly. Structured enough to trust.</h2>
+    </div>
+
+    <div class="process-grid">
+      @for (step of steps; track step.title; let index = $index) {
+        <article class="process-card">
+          <span class="step-number">0{{ index + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="content-section services-section">
+    <div class="services-copy">
+      <p class="section-kicker">Services at a glance</p>
+      <h2>Coverage that supports the full turn cycle</h2>
+      <p>
+        From urgent turns to recurring property support, Make Ready Go helps keep
+        your move-in schedule and presentation on track.
+      </p>
+      <a mat-flat-button class="primary-btn" routerLink="/contact">
+        Talk With Our Team
+      </a>
+    </div>
+
+    <div class="services-panel">
+      @for (service of services; track service) {
+        <div class="service-row">
+          <div class="service-icon">
+            <mat-icon>{{ service.icon }}</mat-icon>
+          </div>
+          <span>{{ service.label }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="content-section faq-section">
+    <div class="section-heading">
+      <p class="section-kicker">FAQ</p>
+      <h2>Questions teams ask before they reach out</h2>
+    </div>
+
+    <div class="faq-list">
+      @for (faq of faqs; track faq.question) {
+        <article class="faq-card">
+          <h3>{{ faq.question }}</h3>
+          <p>{{ faq.answer }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div>
+      <p class="section-kicker">Ready to move faster?</p>
+      <h2>Request a quote and get your next turn moving.</h2>
+      <p>
+        Share the unit details and timeline. We will follow up with clear next steps.
+      </p>
+    </div>
+    <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
+      Start Your Quote
+    </a>
+  </section>
 </div>

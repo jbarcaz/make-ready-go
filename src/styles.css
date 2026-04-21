@@ -1,20 +1,85 @@
-/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #f3f7fc;
+  --surface: #ffffff;
+  --surface-muted: #edf4ff;
+  --surface-accent: #dfeafc;
+  --text: #17324d;
+  --text-muted: #5c738c;
+  --heading: #0f2238;
+  --line: rgba(23, 50, 77, 0.12);
+  --primary: #1f5fae;
+  --primary-dark: #174b8a;
+  --primary-soft: #e1edfd;
+  --accent: #4f92f6;
+  --shadow-lg: 0 24px 70px rgba(23, 50, 77, 0.12);
+  --shadow-md: 0 14px 34px rgba(23, 50, 77, 0.08);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --content-width: 1180px;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(79, 146, 246, 0.14), transparent 24%),
+    linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Additional styling */
-h1, h2, h3, h4, h5, h6 {
+body .mat-typography,
+body button,
+body input,
+body select,
+body textarea {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
+}
+
+::selection {
+  background: rgba(31, 95, 174, 0.18);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(31, 95, 174, 0.28);
+  outline-offset: 3px;
 }

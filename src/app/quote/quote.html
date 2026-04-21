@@ -1,13 +1,33 @@
 <div class="page-container">
   <mat-card class="quote-card">
-    <h1 class="card-title">Get a Quote</h1>
-    <p class="card-subtitle">
-      Need fast and reliable make-ready services? Tell us about your project and
-      we'll respond within 24 hours.
-    </p>
+    <div class="quote-hero">
+      <div class="quote-copy">
+        <p class="eyebrow">Request a quote</p>
+        <h1 class="card-title">Tell us about the turn. We will handle the follow-through.</h1>
+        <p class="card-subtitle">
+          Share the property details, service type, and timeline. Make Ready Go
+          will review the request and follow up with a clear quote and next steps.
+        </p>
+      </div>
+
+      <div class="quote-highlights" aria-label="Reasons to request a quote">
+        <div class="highlight-card">
+          <strong>Clear scope</strong>
+          <span>Honest pricing and straightforward service details.</span>
+        </div>
+        <div class="highlight-card">
+          <strong>Fast response</strong>
+          <span>Built for busy property managers and time-sensitive turns.</span>
+        </div>
+        <div class="highlight-card">
+          <strong>Reliable support</strong>
+          <span>One dependable partner from request through completion.</span>
+        </div>
+      </div>
+    </div>
 
     <div class="section-divider">
-      <span>Request a Quote</span>
+      <span>Project Details</span>
     </div>
 
     <form
@@ -150,7 +170,7 @@
 
       <div class="button-row">
         <button class="submit-btn" type="submit" [disabled]="loading || quoteForm.invalid">
-          {{ loading ? 'Sending...' : 'Request Quote' }}
+          {{ loading ? 'Sending...' : 'Request My Quote' }}
         </button>
       </div>
 
@@ -159,9 +179,9 @@
     </form>
 
     <div class="trust-row">
-      <span><mat-icon>check</mat-icon>Honest pricing</span>
-      <span><mat-icon>check</mat-icon>Fast turnaround</span>
-      <span><mat-icon>check</mat-icon>Professional service</span>
+      <span><mat-icon>check_circle</mat-icon>Honest pricing</span>
+      <span><mat-icon>check_circle</mat-icon>Fast turnaround</span>
+      <span><mat-icon>check_circle</mat-icon>Professional communication</span>
     </div>
   </mat-card>
 </div>
