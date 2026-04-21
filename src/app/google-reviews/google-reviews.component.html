@@ -1,0 +1,71 @@
+<section class="google-reviews-section" aria-labelledby="google-reviews-title">
+  <div class="reviews-shell">
+    <div class="reviews-header">
+      <div class="reviews-heading">
+        <p class="section-kicker">Google Reviews</p>
+        <h2 id="google-reviews-title">Review proof that helps build trust quickly.</h2>
+        <p>See the rating snapshot and recent feedback property teams look for before reaching out.</p>
+      </div>
+    </div>
+
+    @if (status === "loading") {
+      <div class="reviews-grid" aria-label="Loading Google reviews">
+        @for (_ of [1, 2, 3]; track $index) {
+          <article class="review-card skeleton-card">
+            <div class="skeleton-line skeleton-line-long"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line skeleton-line-short"></div>
+            <div class="skeleton-meta"></div>
+          </article>
+        }
+      </div>
+    } @else if (status === "loaded" && reviewsData) {
+      <div class="reviews-grid" aria-label="Recent Google reviews">
+        @for (review of reviewsData.reviews; track review.authorName + review.text) {
+          <article class="review-card">
+            <div class="card-stars" [attr.aria-label]="'Rated ' + review.rating + ' out of 5 stars'">
+              @for (_ of reviewStars(review.rating); track $index) {
+                <mat-icon>star</mat-icon>
+              }
+              @for (_ of reviewEmptyStars(review.rating); track $index) {
+                <mat-icon class="star-muted">star</mat-icon>
+              }
+            </div>
+
+            <p class="review-text">{{ review.text }}</p>
+
+            <div class="review-meta">
+              <strong>{{ review.authorName }}</strong>
+            </div>
+          </article>
+        }
+      </div>
+
+      <div class="reviews-actions">
+        <a
+          mat-flat-button
+          class="primary-btn"
+          [href]="reviewsData.googleBusinessUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read All Reviews on Google
+          <mat-icon aria-hidden="true">open_in_new</mat-icon>
+        </a>
+      </div>
+    } @else if (status === "empty") {
+      <div class="feedback-card" aria-live="polite">
+        <strong>Google reviews will show here once they are available.</strong>
+        <p>The component is ready for live Places data or mock review content.</p>
+      </div>
+    } @else {
+      <div class="feedback-card" aria-live="assertive">
+        <strong>Google reviews could not be loaded right now.</strong>
+        <p>Check the Google reviews config or keep using mock mode until API setup is ready.</p>
+        <button mat-stroked-button type="button" class="retry-btn" (click)="loadReviews()">
+          Try Again
+        </button>
+      </div>
+    }
+  </div>
+</section>

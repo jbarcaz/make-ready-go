@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
+import { GoogleReviewsComponent } from "../google-reviews/google-reviews.component";
 
 @Component({
   selector: "app-home",
@@ -10,6 +11,7 @@ import { RouterLink } from "@angular/router";
     MatButtonModule,
     MatIconModule,
     RouterLink,
+    GoogleReviewsComponent,
   ],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
