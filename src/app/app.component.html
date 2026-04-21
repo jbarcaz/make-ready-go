@@ -13,27 +13,29 @@
       </div>
     </a>
 
-    <button
-      type="button"
-      class="theme-toggle"
-      (click)="toggleTheme()"
-      [attr.aria-pressed]="isDarkMode"
-      [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
-    >
-      <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
-      <span>{{ isDarkMode ? 'Light' : 'Dark' }}</span>
-    </button>
+    <div class="header-controls">
+      <button
+        type="button"
+        class="theme-toggle"
+        (click)="toggleTheme()"
+        [attr.aria-pressed]="isDarkMode"
+        [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        <span>{{ isDarkMode ? 'Light' : 'Dark' }}</span>
+      </button>
 
-    <button
-      type="button"
-      class="menu-toggle"
-      (click)="toggleMobileMenu()"
-      [attr.aria-expanded]="mobileMenuOpen"
-      aria-controls="primary-nav"
-      aria-label="Toggle navigation menu"
-    >
-      <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
-    </button>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-controls="primary-nav"
+        aria-label="Toggle navigation menu"
+      >
+        <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
 
     <nav
       id="primary-nav"
@@ -44,10 +46,6 @@
       <a mat-button routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">About</a>
       <a mat-button routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
       <a mat-button routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
-      <button type="button" class="theme-toggle mobile-theme-toggle" (click)="toggleTheme()">
-        <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
-        <span>{{ isDarkMode ? 'Switch to light mode' : 'Switch to dark mode' }}</span>
-      </button>
       <a class="header-cta" mat-flat-button routerLink="/get-a-quote" routerLinkActive="active" (click)="closeMobileMenu()">
         Request a Quote
       </a>
