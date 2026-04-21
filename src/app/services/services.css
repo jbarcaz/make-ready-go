@@ -9,7 +9,7 @@
   border-radius: 32px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--surface-strong);
 }
 
 .eyebrow {
@@ -47,7 +47,7 @@
 .service-card {
   padding: 24px;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(243, 247, 252, 0.94));
+  background: linear-gradient(180deg, var(--surface-strong), color-mix(in srgb, var(--surface-muted) 82%, transparent));
   border: 1px solid rgba(23, 50, 77, 0.1);
 }
 

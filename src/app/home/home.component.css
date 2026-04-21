@@ -106,7 +106,7 @@
 .secondary-btn {
   border-color: rgba(31, 95, 174, 0.22) !important;
   color: var(--primary-dark) !important;
-  background: rgba(255, 255, 255, 0.6);
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
   padding-inline: 22px !important;
 }
 
@@ -148,7 +148,7 @@
 .services-panel,
 .faq-card,
 .final-cta {
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--surface-soft);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
 }
@@ -193,7 +193,7 @@
   gap: 20px;
   padding: 22px;
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
 }
@@ -226,7 +226,7 @@
   gap: 16px;
   padding: 18px 20px;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(225, 237, 253, 0.7), rgba(255, 255, 255, 0.92));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 82%, transparent), var(--surface-strong));
   border: 1px solid rgba(23, 50, 77, 0.08);
 }
 
@@ -341,7 +341,7 @@
 .content-section {
   padding: 32px;
   border-radius: 34px;
-  background: rgba(255, 255, 255, 0.45);
+  background: color-mix(in srgb, var(--surface) 52%, transparent);
 }
 
 .compact-section {
