@@ -6,6 +6,7 @@ import { environment } from "../../environments/environment";
 export interface GoogleReviewItem {
   authorName: string;
   rating: number;
+  highlight: string;
   text: string;
 }
 
@@ -32,24 +33,27 @@ interface GooglePlacesReviewResponse {
 
 const MOCK_REVIEWS_DATA: GoogleReviewsData = {
   businessName: "Make Ready Go",
-  averageRating: 4.9,
-  reviewCount: 37,
+  averageRating: 5.0,
+  reviewCount: 7,
   googleBusinessUrl: environment.googleReviews.googleBusinessUrl,
   reviews: [
     {
       authorName: "Javier 8a",
       rating: 5,
-      text: "I had a great experience with this team. They came out to fix some A/C and plumbing issues at my home, and from the start they were professional, respectful, and easy to work with.",
+      highlight: "Professional, respectful, and easy to work with.",
+      text: "I had a great experience with this team, they came out to fix some A/C and plumbing issues at my home, and from the start they were professional, respectful, and easy to work with. They handled everything with care and attention to detail, and most importantly, everything was left working perfectly. More than just a service, it was a smooth and reassuring experience. Without a doubt, a team you can trust and one I would gladly hire again.",
     },
     {
       authorName: "Milien Garcia",
       rating: 5,
+      highlight: "Responded fast and handled everything professionally.",
       text: "We had an emergency flood in our apartment, and Make Ready Go responded fast and handled everything professionally. They made a stressful situation much easier.",
     },
     {
       authorName: "Nilvia Sanchez",
       rating: 5,
-      text: "I contacted Make Ready Go for an urgent plumbing issue involving a broken water valve. Their response was prompt and reliable, and they resolved the problem quickly.",
+      highlight: "Their response was prompt and reliable.",
+      text: "I contacted Make Ready To Go for an urgent plumbing issue involving a broken water valve, their response was prompt and reliable. They quickly identified the problem and resolved it effectively, preventing further damage and ensuring everything was functioning properly before they left. In both situations, their professionalism, reliability, and quality of work stood out. The team was courteous, respectful of my property, and clearly experienced in handling different types of tasks. I would not hesitate to recommend Make Ready To Go to anyone in need of cleaning, maintenance, or repair services. They have consistently delivered excellent results and dependable service.",
     },
   ],
 };
@@ -96,6 +100,7 @@ export class GoogleReviewsService {
         .map((review) => ({
           authorName: review.authorAttribution?.displayName?.trim() || "Google reviewer",
           rating: Math.max(0, Math.min(5, Math.round(review.rating ?? 0))),
+          highlight: review.text?.text?.trim() || "Recent Google review",
           text: review.text?.text?.trim() || "Review text unavailable.",
         })),
     };

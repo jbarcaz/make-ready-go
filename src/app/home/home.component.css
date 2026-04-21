@@ -275,6 +275,20 @@
   word-break: break-word;
 }
 
+.hero-mini-card strong a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.hero-mini-card strong a:visited,
+.hero-mini-card strong a:hover,
+.hero-mini-card strong a:active,
+.hero-mini-card strong a:focus-visible {
+  color: inherit;
+  text-decoration: none;
+}
+
 .hero-mini-card span {
   color: var(--text-muted);
   line-height: 1.5;

@@ -3,8 +3,14 @@
     <div class="reviews-header">
       <div class="reviews-heading">
         <p class="section-kicker">Google Reviews</p>
-        <h2 id="google-reviews-title">Review proof that helps build trust quickly.</h2>
-        <p>See the rating snapshot and recent feedback property teams look for before reaching out.</p>
+        @if (status === "loaded" && reviewsData) {
+          <p class="rating-headline">5.0 Rating on Google</p>
+          <h2 id="google-reviews-title">Trusted by property managers for fast, reliable service.</h2>
+          <p>See a few of the strongest comments about speed, reliability, and results from Google reviews.</p>
+        } @else {
+          <h2 id="google-reviews-title">Trusted by property managers for fast, reliable service.</h2>
+          <p>Recent Google feedback helps reinforce the speed and professionalism teams can expect.</p>
+        }
       </div>
     </div>
 
@@ -21,7 +27,7 @@
       </div>
     } @else if (status === "loaded" && reviewsData) {
       <div class="reviews-grid" aria-label="Recent Google reviews">
-        @for (review of reviewsData.reviews; track review.authorName + review.text) {
+        @for (review of reviewsData.reviews; track review.authorName + review.text; let index = $index) {
           <article class="review-card">
             <div class="card-stars" [attr.aria-label]="'Rated ' + review.rating + ' out of 5 stars'">
               @for (_ of reviewStars(review.rating); track $index) {
@@ -32,7 +38,21 @@
               }
             </div>
 
-            <p class="review-text">{{ review.text }}</p>
+            <p class="review-highlight">{{ review.highlight }}</p>
+            <p class="review-text">
+              {{ isExpanded(index) ? review.text : previewText(review.text) }}
+            </p>
+
+            @if (shouldTruncate(review.text)) {
+              <button
+                type="button"
+                class="read-more-btn"
+                (click)="toggleExpanded(index)"
+                [attr.aria-expanded]="isExpanded(index)"
+              >
+                {{ isExpanded(index) ? 'Show less' : 'Read more' }}
+              </button>
+            }
 
             <div class="review-meta">
               <strong>{{ review.authorName }}</strong>
@@ -43,14 +63,17 @@
 
       <div class="reviews-actions">
         <a
-          mat-flat-button
-          class="primary-btn"
+          mat-stroked-button
+          class="secondary-btn"
           [href]="reviewsData.googleBusinessUrl"
           target="_blank"
           rel="noopener noreferrer"
         >
           Read All Reviews on Google
           <mat-icon aria-hidden="true">open_in_new</mat-icon>
+        </a>
+        <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
+          Get Your Unit Turn Quote
         </a>
       </div>
     } @else if (status === "empty") {
