@@ -2,19 +2,18 @@
   <section class="hero-section">
     <div class="hero-copy">
       <p class="eyebrow">Apartment make ready services for San Antonio property managers</p>
-      <h1>Faster unit turns that help you lease sooner.</h1>
+      <h1>Get vacant units turned faster so you can lease sooner.</h1>
       <p class="hero-text">
-        We help property managers and multifamily teams turn units quickly with
-        make-ready, trash out, grounds support, and clear communication from quote to completion.
+        Make-ready, trash out, and grounds support for multifamily teams that need fast turnaround and clear follow-through.
       </p>
 
       <div class="hero-actions">
         <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
-          <span>Request a Quote</span>
+          <span>Get a Fast Quote</span>
           <mat-icon aria-hidden="true">arrow_forward</mat-icon>
         </a>
         <a mat-stroked-button class="secondary-btn" routerLink="/services">
-          View Services
+          See Services
         </a>
       </div>
 
@@ -96,11 +95,24 @@
   <section class="content-section compact-section">
     <div class="section-heading">
       <p class="section-kicker">Why teams choose us</p>
-      <h2>Clear service, faster turns, less follow-up.</h2>
+      <h2>Less chasing. Faster turns. Better-looking units.</h2>
       <p>
-        Property managers do not just need labor. They need reliable help that
-        reduces vacancy time, protects presentation, and keeps the turn process moving.
+        Property teams need more than extra labor. They need a crew that helps keep vacant units moving without adding more follow-up for the office.
       </p>
+    </div>
+
+    <div class="benefit-list" aria-label="Key advantages">
+      @for (benefit of benefits; track benefit.title) {
+        <article class="benefit-card">
+          <div class="benefit-icon">
+            <mat-icon>{{ benefit.icon }}</mat-icon>
+          </div>
+          <div>
+            <h3>{{ benefit.title }}</h3>
+            <p>{{ benefit.description }}</p>
+          </div>
+        </article>
+      }
     </div>
   </section>
 

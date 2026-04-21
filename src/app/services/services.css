@@ -1,11 +1,11 @@
 .page-container {
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .services-card {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 34px 32px;
   border-radius: 32px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
@@ -22,8 +22,8 @@
 
 .card-title {
   margin-top: 12px;
-  font-size: clamp(2.3rem, 4vw, 3.6rem);
-  line-height: 1.02;
+  font-size: clamp(2.15rem, 3.8vw, 3.35rem);
+  line-height: 1.04;
   letter-spacing: -0.04em;
   font-weight: 800;
   color: var(--heading);
@@ -32,20 +32,20 @@
 .card-subtitle {
   max-width: 62ch;
   margin-top: 14px;
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.68;
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 26px;
 }
 
 .service-card {
-  padding: 24px;
+  padding: 22px 20px;
   border-radius: 24px;
   background: linear-gradient(180deg, var(--surface-strong), color-mix(in srgb, var(--surface-muted) 82%, transparent));
   border: 1px solid rgba(23, 50, 77, 0.1);
@@ -54,13 +54,28 @@
 .service-card h2 {
   margin-bottom: 10px;
   color: var(--heading);
-  font-size: 1.3rem;
+  font-size: 1.18rem;
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .service-card p {
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.services-cta {
+  margin-top: 24px;
+}
+
+.primary-cta {
+  min-height: 48px;
+  border-radius: 999px !important;
+  padding-inline: 22px !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 768px) {
@@ -69,11 +84,26 @@
   }
 
   .services-card {
-    padding: 22px 18px;
+    padding: 24px 18px;
     border-radius: 24px;
   }
 
   .service-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-title {
+    font-size: clamp(1.95rem, 8vw, 2.55rem);
+    line-height: 1.06;
+  }
+
+  .card-subtitle,
+  .service-card p {
+    font-size: 0.96rem;
+    line-height: 1.58;
+  }
+
+  .primary-cta {
+    width: 100%;
   }
 }

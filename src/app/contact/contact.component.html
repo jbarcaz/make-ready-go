@@ -5,8 +5,7 @@
         <p class="eyebrow">Contact Make Ready Go</p>
         <h1 class="card-title">Talk to a team that understands apartment turn pressure.</h1>
         <p class="card-subtitle">
-          Reach out with a question, request a call back, or tell us what support
-          your property needs. We will follow up promptly.
+          Reach out with a question or tell us what your property needs. We will follow up promptly.
         </p>
 
         <div class="contact-info">
@@ -23,8 +22,8 @@
 
       <div class="form-panel">
         <div class="form-panel-header">
-          <h2>Request a Call Back</h2>
-          <p>Tell us a little about your property or question and we will get back to you.</p>
+          <h2>Request a Quick Call Back</h2>
+          <p>Share a few details and we will get back to you with next steps.</p>
         </div>
 
         <form
@@ -41,74 +40,94 @@
             autocomplete="off"
           />
 
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Your Name</mat-label>
-            <input
-              matInput
-              placeholder="Your name"
-              name="name"
-              ngModel
-              required
-              minlength="2"
-            />
-            <mat-icon matPrefix>person</mat-icon>
-            <mat-error *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
-              Name is required
-            </mat-error>
-          </mat-form-field>
+          <div class="form-section">
+            <div class="section-label">
+              <span>Contact details</span>
+              <p>Give us the best way to reach you back.</p>
+            </div>
 
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Phone Number</mat-label>
-            <input
-              matInput
-              type="tel"
-              name="phone"
-              [(ngModel)]="phone"
-              (input)="onPhoneInput($event)"
-              required
-              pattern="^\(\d{3}\)\s\d{3}\s\d{4}$"
-              maxlength="14"
-            />
-            <mat-icon matPrefix>phone</mat-icon>
-            <mat-error *ngIf="contactForm.submitted && contactForm.controls['phone']?.invalid">
-              Enter a valid phone number
-            </mat-error>
-          </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Name</mat-label>
+              <input
+                matInput
+                placeholder="Your name"
+                name="name"
+                ngModel
+                required
+                minlength="2"
+              />
+              <mat-icon matPrefix>person</mat-icon>
+              <mat-error *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
+                Name is required
+              </mat-error>
+            </mat-form-field>
 
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Your Message</mat-label>
-            <textarea
-              matInput
-              rows="6"
-              placeholder="Property details, service needs, or questions"
-              name="message"
-              ngModel
-              required
-              minlength="10"
-            ></textarea>
-            <mat-error *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
-              Message must be at least 10 characters
-            </mat-error>
-          </mat-form-field>
-
-          <div class="button-row">
-            <button
-              mat-flat-button
-              class="submit-btn"
-              type="submit"
-              [disabled]="loading"
-            >
-              {{ loading ? 'Sending…' : 'Request a Call Back' }}
-            </button>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Phone Number</mat-label>
+              <input
+                matInput
+                type="tel"
+                name="phone"
+                [(ngModel)]="phone"
+                (input)="onPhoneInput($event)"
+                required
+                pattern="^\(\d{3}\)\s\d{3}\s\d{4}$"
+                maxlength="14"
+              />
+              <mat-icon matPrefix>phone</mat-icon>
+              <mat-error *ngIf="contactForm.submitted && contactForm.controls['phone']?.invalid">
+                Enter a valid phone number
+              </mat-error>
+            </mat-form-field>
           </div>
 
-          <p class="success" *ngIf="success">
-            Your message has been sent successfully.
-          </p>
+          <div class="form-section">
+            <div class="section-label">
+              <span>What do you need?</span>
+              <p>Share the property details, service need, or question.</p>
+            </div>
 
-          <p class="error" *ngIf="error">
-            Something went wrong. Please try again.
-          </p>
+            <mat-form-field appearance="outline" class="full-width message-field">
+              <mat-label>Your Message</mat-label>
+              <textarea
+                matInput
+                rows="6"
+                placeholder="Property details, service needs, or questions"
+                name="message"
+                ngModel
+                required
+                minlength="10"
+              ></textarea>
+              <mat-error *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
+                Message must be at least 10 characters
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="submit-panel">
+            <p class="submit-note">We usually respond with next steps as quickly as possible.</p>
+
+            <div class="button-row">
+              <button
+                mat-flat-button
+                class="submit-btn"
+                type="submit"
+                [disabled]="loading"
+              >
+                {{ loading ? 'Sending…' : 'Request a Quick Call Back' }}
+              </button>
+            </div>
+          </div>
+
+          <div class="status-messages">
+            <p class="success" *ngIf="success">
+              Your message has been sent successfully.
+            </p>
+
+            <p class="error" *ngIf="error">
+              Something went wrong. Please try again.
+            </p>
+          </div>
         </form>
       </div>
     </div>

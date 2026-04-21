@@ -1,7 +1,7 @@
 .home-page {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 36px;
   min-width: 0;
 }
 
@@ -17,7 +17,7 @@
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
   gap: 40px;
   align-items: start;
-  padding: 22px 0 4px;
+  padding: 34px 0 10px;
 }
 
 .hero-copy,
@@ -42,12 +42,12 @@
 }
 
 .hero-copy h1 {
-  margin-top: 14px;
+  margin: 12px 0 0;
   color: var(--heading);
-  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
-  line-height: 0.92;
+  font-size: clamp(2.7rem, 5.4vw, 4.8rem);
+  line-height: 0.96;
   letter-spacing: -0.05em;
-  max-width: 10ch;
+  max-width: 11ch;
 }
 
 .hero-text,
@@ -64,24 +64,25 @@
 }
 
 .hero-text {
-  margin-top: 20px;
-  max-width: 56ch;
-  font-size: 1.08rem;
+  margin-top: 16px;
+  max-width: 44ch;
+  font-size: 1rem;
+  line-height: 1.68;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 32px;
+  gap: 14px;
+  margin-top: 26px;
   align-items: center;
 }
 
 .primary-btn,
 .secondary-btn {
-  min-height: 54px;
+  min-height: 52px;
   border-radius: 999px !important;
-  padding-inline: 26px !important;
+  padding-inline: 24px !important;
   font-weight: 800;
   letter-spacing: -0.01em;
 }
@@ -93,7 +94,7 @@
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 2px;
 }
 
 .primary-btn mat-icon {
@@ -112,9 +113,9 @@
 
 .hero-points {
   display: grid;
-  gap: 12px;
-  margin-top: 26px;
-  max-width: 620px;
+  gap: 10px;
+  margin-top: 24px;
+  max-width: 560px;
 }
 
 .hero-point {
@@ -123,15 +124,16 @@
   gap: 10px;
   color: var(--text);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .hero-point mat-icon {
   color: var(--primary);
   flex: 0 0 auto;
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
 }
 
 .hero-visual {
@@ -190,8 +192,8 @@
 .hero-info-card {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 22px;
+  gap: 18px;
+  padding: 20px;
   border-radius: 26px;
   background: var(--surface-strong);
   border: 1px solid var(--line);
@@ -201,15 +203,15 @@
 .hero-info-copy h2 {
   margin: 8px 0 8px;
   color: var(--heading);
-  font-size: 1.45rem;
-  line-height: 1.08;
+  font-size: 1.36rem;
+  line-height: 1.12;
   letter-spacing: -0.03em;
 }
 
 .hero-info-copy p {
   color: var(--text-muted);
-  line-height: 1.65;
-  font-size: 0.98rem;
+  line-height: 1.58;
+  font-size: 0.94rem;
 }
 
 .panel-kicker {
@@ -223,8 +225,8 @@
 .hero-info-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  padding: 18px 20px;
+  gap: 12px;
+  padding: 16px 18px;
   border-radius: 22px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 82%, transparent), var(--surface-strong));
   border: 1px solid rgba(23, 50, 77, 0.08);
@@ -236,29 +238,29 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid rgba(23, 50, 77, 0.08);
-  padding-top: 16px;
+  padding-top: 14px;
 }
 
 .hero-mini-card {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding-right: 16px;
+  gap: 10px;
+  padding-right: 14px;
   min-width: 0;
 }
 
 .hero-mini-card:last-child {
   padding-right: 0;
-  padding-left: 16px;
+  padding-left: 14px;
   border-left: 1px solid rgba(23, 50, 77, 0.08);
 }
 
 .hero-mini-card mat-icon {
   margin-top: 2px;
   color: var(--primary);
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .hero-mini-card strong {
@@ -283,23 +285,24 @@
 
 .stat-item strong {
   color: var(--heading);
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   font-weight: 800;
   line-height: 1.1;
 }
 
 .stat-item span {
   color: var(--text-muted);
-  font-size: 0.86rem;
-  line-height: 1.45;
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .proof-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  padding: 22px;
+  padding: 24px;
   border-radius: var(--radius-lg);
+  background: var(--surface-strong);
 }
 
 .proof-item strong,
@@ -325,28 +328,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 14px;
   background: var(--primary-soft);
   color: var(--primary-dark);
   flex: 0 0 auto;
 }
 
+.proof-icon mat-icon,
+.benefit-icon mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
 .proof-item span {
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
 .content-section {
-  padding: 32px;
+  padding: 36px 32px;
   border-radius: 34px;
   background: color-mix(in srgb, var(--surface) 52%, transparent);
 }
 
 .compact-section {
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 34px;
+  padding-bottom: 34px;
 }
 
 .section-heading {
@@ -358,8 +369,47 @@
 .final-cta h2 {
   margin: 14px 0 14px;
   font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-  line-height: 0.98;
+  line-height: 1;
   letter-spacing: -0.04em;
+}
+
+.section-heading p {
+  max-width: 58ch;
+}
+
+.benefit-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 18px;
+  border-radius: 24px;
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex: 0 0 auto;
+}
+
+.benefit-card h3 {
+  margin: 0 0 8px;
+  color: var(--heading);
+  font-size: 1.02rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .benefit-grid,
@@ -483,6 +533,7 @@
     height: 420px;
   }
 
+  .benefit-list,
   .benefit-grid,
   .process-grid,
   .faq-list,
@@ -493,23 +544,23 @@
 
 @media (max-width: 720px) {
   .home-page {
-    gap: 28px;
+    gap: 32px;
   }
 
   .hero-section {
-    gap: 20px;
-    padding-top: 2px;
+    gap: 22px;
+    padding: 12px 0 4px;
   }
 
   .hero-copy h1 {
     max-width: none;
-    font-size: clamp(2.3rem, 11vw, 3.4rem);
-    line-height: 0.96;
+    font-size: clamp(2.05rem, 9.4vw, 2.9rem);
+    line-height: 1.02;
   }
 
   .hero-text {
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   .hero-actions {
@@ -566,6 +617,11 @@
     padding: 22px 18px;
   }
 
+  .compact-section {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
   .final-cta {
     flex-direction: column;
     align-items: stretch;
@@ -588,13 +644,22 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(2rem, 12vw, 2.9rem);
+    font-size: clamp(1.82rem, 9.6vw, 2.3rem);
+    line-height: 1.04;
   }
 
   .primary-btn,
   .secondary-btn {
     min-height: 48px;
     padding-inline: 18px !important;
+  }
+
+  .hero-text,
+  .section-heading p,
+  .proof-item span,
+  .benefit-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 
   .hero-card-primary {
@@ -612,14 +677,26 @@
   .benefit-card,
   .process-card,
   .faq-card {
-    padding: 20px;
+    padding: 18px;
   }
 
   .section-heading h2,
   .services-copy h2,
   .final-cta h2 {
-    font-size: clamp(1.7rem, 8vw, 2.3rem);
-    line-height: 1.04;
+    font-size: clamp(1.52rem, 7vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .proof-item {
+    gap: 12px;
+  }
+
+  .proof-icon,
+  .benefit-icon,
+  .step-number,
+  .service-icon {
+    width: 38px;
+    height: 38px;
   }
 
   .service-row {

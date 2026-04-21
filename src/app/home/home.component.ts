@@ -51,6 +51,24 @@ export class HomeComponent {
     },
   ];
 
+  readonly benefits = [
+    {
+      icon: "bolt",
+      title: "Quick response when units open up",
+      description: "Move from vacancy to action faster with a team that is built around apartment turn timelines.",
+    },
+    {
+      icon: "chat",
+      title: "Fewer update requests from your office",
+      description: "Clear scope, communication, and next steps help your staff spend less time chasing vendors.",
+    },
+    {
+      icon: "fact_check",
+      title: "Work that supports leasing readiness",
+      description: "Cleaner presentation and dependable follow-through help units show better and get back on the market sooner.",
+    },
+  ];
+
   readonly steps = [
     {
       title: "Send the unit and service details",

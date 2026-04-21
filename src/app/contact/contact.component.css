@@ -1,5 +1,5 @@
 .page-container {
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .contact-card {
@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 24px;
-  padding: 28px;
+  padding: 30px 28px;
 }
 
 .eyebrow {
@@ -29,8 +29,8 @@
 
 .card-title {
   margin-top: 10px;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  line-height: 1.02;
+  font-size: clamp(2.1rem, 3.8vw, 3.15rem);
+  line-height: 1.04;
   letter-spacing: -0.04em;
   font-weight: 800;
   color: var(--heading);
@@ -38,8 +38,8 @@
 
 .card-subtitle {
   margin: 14px 0 0;
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.68;
   color: var(--text-muted);
   max-width: 60ch;
 }
@@ -47,14 +47,14 @@
 .contact-info {
   display: grid;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 24px;
 }
 
 .info-card {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 18px;
+  padding: 16px;
   border-radius: 22px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 82%, transparent), var(--surface-strong));
   border: 1px solid rgba(31, 95, 174, 0.14);
@@ -70,13 +70,14 @@
 
 .info-value {
   color: var(--heading);
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   text-decoration: none;
+  line-height: 1.4;
 }
 
 .form-panel {
-  padding: 24px;
+  padding: 22px;
   border-radius: 28px;
   background: var(--surface-panel);
   border: 1px solid rgba(23, 50, 77, 0.08);
@@ -85,30 +86,72 @@
 .form-panel-header h2 {
   margin: 0;
   color: var(--heading);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .form-panel-header p {
   margin-top: 8px;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.58;
+  font-size: 0.96rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 18px;
 }
 
 .full-width {
   width: 100%;
 }
 
+.form-section {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  border: 1px solid rgba(23, 50, 77, 0.08);
+}
+
+.section-label {
+  display: grid;
+  gap: 4px;
+}
+
+.section-label span {
+  color: var(--heading);
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.section-label p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.message-field textarea {
+  min-height: 132px;
+}
+
 :host ::ng-deep .mat-mdc-text-field-wrapper {
   border-radius: 16px;
   background: var(--field-bg);
+}
+
+:host ::ng-deep .mat-mdc-form-field-infix {
+  min-height: 54px;
+}
+
+:host ::ng-deep textarea.mat-mdc-input-element {
+  resize: vertical;
 }
 
 :host ::ng-deep .mat-mdc-form-field .mdc-floating-label,
@@ -136,7 +179,27 @@
 .button-row {
   display: flex;
   gap: 16px;
-  margin-top: 8px;
+}
+
+.submit-panel {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 76%, transparent), var(--surface-strong));
+  border: 1px solid rgba(31, 95, 174, 0.14);
+}
+
+.submit-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.status-messages {
+  display: grid;
+  gap: 10px;
 }
 
 .submit-btn {
@@ -172,7 +235,12 @@
 
   .contact-shell {
     grid-template-columns: 1fr;
-    padding: 18px;
+    padding: 20px 18px;
+  }
+
+  .card-title {
+    font-size: clamp(1.95rem, 7.8vw, 2.6rem);
+    line-height: 1.06;
   }
 }
 
@@ -187,5 +255,27 @@
 
   .form-panel {
     padding: 18px 16px;
+  }
+
+  .form-section,
+  .submit-panel {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .card-subtitle,
+  .form-panel-header p,
+  .section-label p,
+  .submit-note {
+    font-size: 0.95rem;
+    line-height: 1.58;
+  }
+
+  .info-value {
+    font-size: 0.98rem;
+  }
+
+  .section-label span {
+    font-size: 0.92rem;
   }
 }
