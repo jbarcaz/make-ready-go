@@ -2,18 +2,18 @@
   <section class="hero-section">
     <div class="hero-copy">
       <p class="eyebrow">Apartment make ready services for San Antonio property managers</p>
-      <h1>Get vacant units turned faster so you can lease sooner.</h1>
+      <h1>Turn vacant units into move-in-ready apartments faster.</h1>
       <p class="hero-text">
-        Make-ready, trash out, and grounds support for multifamily teams that need fast turnaround and clear follow-through.
+        Fast make-ready support for multifamily teams that need cleaner units, faster turns, and less vendor chasing.
       </p>
 
       <div class="hero-actions">
         <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
-          <span>Get a Fast Quote</span>
+          <span>Get Pricing & Next Steps</span>
           <mat-icon aria-hidden="true">arrow_forward</mat-icon>
         </a>
         <a mat-stroked-button class="secondary-btn" routerLink="/services">
-          See Services
+          View Turn Services
         </a>
       </div>
 
@@ -41,10 +41,9 @@
       <div class="hero-info-card">
         <div class="hero-info-copy">
           <span class="panel-kicker">What you get</span>
-          <h2>One team to help move units from vacant to move-in ready.</h2>
+          <h2>Faster turns without the vendor scramble.</h2>
           <p>
-            Less vendor chasing, clearer communication, and practical support for
-            apartment teams working against leasing deadlines.
+            One responsive team for make-ready support, clear follow-up, and tighter turnaround windows.
           </p>
         </div>
 
@@ -93,12 +92,23 @@
   </section>
 
   <section class="content-section compact-section">
-    <div class="section-heading">
-      <p class="section-kicker">Why teams choose us</p>
-      <h2>Less chasing. Faster turns. Better-looking units.</h2>
-      <p>
-        Property teams need more than extra labor. They need a crew that helps keep vacant units moving without adding more follow-up for the office.
-      </p>
+    <div class="section-intro-layout">
+      <div class="section-heading">
+        <p class="section-kicker">Why teams choose us</p>
+        <h2>Less follow-up for your office. More momentum for every turn.</h2>
+        <p>
+          Property teams need a crew that helps units move forward without creating more phone calls, delays, or cleanup issues.
+        </p>
+      </div>
+
+      <div class="intro-bullets" aria-label="Primary outcomes">
+        @for (point of sectionPoints; track point) {
+          <div class="intro-bullet">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ point }}</span>
+          </div>
+        }
+      </div>
     </div>
 
     <div class="benefit-list" aria-label="Key advantages">

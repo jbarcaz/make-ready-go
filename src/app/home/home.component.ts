@@ -17,9 +17,9 @@ import { RouterLink } from "@angular/router";
 })
 export class HomeComponent {
   readonly heroPoints = [
-    "Serving San Antonio and surrounding communities",
     "Built for apartment communities and property managers",
-    "Clear quotes and responsive follow-through",
+    "Fast support for vacant units and tight turn windows",
+    "Clear pricing, updates, and next steps",
   ];
 
   readonly metrics = [
@@ -67,6 +67,12 @@ export class HomeComponent {
       title: "Work that supports leasing readiness",
       description: "Cleaner presentation and dependable follow-through help units show better and get back on the market sooner.",
     },
+  ];
+
+  readonly sectionPoints = [
+    "Cleaner units that are ready to show sooner",
+    "Clear updates without constant vendor follow-up",
+    "Reliable support during busy leasing windows",
   ];
 
   readonly steps = [

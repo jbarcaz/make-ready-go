@@ -44,10 +44,10 @@
 .hero-copy h1 {
   margin: 12px 0 0;
   color: var(--heading);
-  font-size: clamp(2.7rem, 5.4vw, 4.8rem);
-  line-height: 0.96;
+  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  line-height: 0.98;
   letter-spacing: -0.05em;
-  max-width: 11ch;
+  max-width: 11.5ch;
 }
 
 .hero-text,
@@ -65,16 +65,16 @@
 
 .hero-text {
   margin-top: 16px;
-  max-width: 44ch;
+  max-width: 40ch;
   font-size: 1rem;
-  line-height: 1.68;
+  line-height: 1.62;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 24px;
   align-items: center;
 }
 
@@ -113,8 +113,8 @@
 
 .hero-points {
   display: grid;
-  gap: 10px;
-  margin-top: 24px;
+  gap: 9px;
+  margin-top: 22px;
   max-width: 560px;
 }
 
@@ -125,6 +125,10 @@
   color: var(--text);
   font-weight: 600;
   line-height: 1.45;
+}
+
+.hero-point span {
+  max-width: 36ch;
 }
 
 .hero-point mat-icon {
@@ -203,8 +207,8 @@
 .hero-info-copy h2 {
   margin: 8px 0 8px;
   color: var(--heading);
-  font-size: 1.36rem;
-  line-height: 1.12;
+  font-size: 1.3rem;
+  line-height: 1.14;
   letter-spacing: -0.03em;
 }
 
@@ -364,6 +368,13 @@
   max-width: 760px;
 }
 
+.section-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 24px;
+  align-items: start;
+}
+
 .section-heading h2,
 .services-copy h2,
 .final-cta h2 {
@@ -375,6 +386,34 @@
 
 .section-heading p {
   max-width: 58ch;
+}
+
+.intro-bullets {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 24px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+
+.intro-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.intro-bullet mat-icon {
+  color: var(--primary);
+  flex: 0 0 auto;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
 }
 
 .benefit-list {
@@ -529,6 +568,10 @@
     max-width: 13ch;
   }
 
+  .section-intro-layout {
+    grid-template-columns: 1fr;
+  }
+
   .hero-card-primary {
     height: 420px;
   }
@@ -554,7 +597,7 @@
 
   .hero-copy h1 {
     max-width: none;
-    font-size: clamp(2.05rem, 9.4vw, 2.9rem);
+    font-size: clamp(1.98rem, 8.9vw, 2.75rem);
     line-height: 1.02;
   }
 
@@ -617,6 +660,15 @@
     padding: 22px 18px;
   }
 
+  .section-intro-layout {
+    gap: 18px;
+  }
+
+  .intro-bullets {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
   .compact-section {
     padding-top: 26px;
     padding-bottom: 26px;
@@ -644,7 +696,7 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.82rem, 9.6vw, 2.3rem);
+    font-size: clamp(1.74rem, 8.9vw, 2.15rem);
     line-height: 1.04;
   }
 
@@ -657,7 +709,9 @@
   .hero-text,
   .section-heading p,
   .proof-item span,
-  .benefit-card p {
+  .benefit-card p,
+  .intro-bullet,
+  .hero-point span {
     font-size: 0.95rem;
     line-height: 1.55;
   }
@@ -689,6 +743,10 @@
 
   .proof-item {
     gap: 12px;
+  }
+
+  .intro-bullets {
+    padding: 14px;
   }
 
   .proof-icon,
