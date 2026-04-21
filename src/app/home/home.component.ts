@@ -51,6 +51,12 @@ export class HomeComponent {
     },
   ];
 
+  readonly trustStats = [
+    { value: "500+", label: "units supported across make-ready and turn services" },
+    { value: "24-48 hr", label: "typical response window for active turn needs" },
+    { value: "San Antonio", label: "service area for apartment communities and multifamily teams" },
+  ];
+
   readonly benefits = [
     {
       icon: "bolt",

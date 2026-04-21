@@ -77,6 +77,27 @@
     </div>
   </section>
 
+  <section class="content-section trust-section">
+    <div class="trust-overview">
+      <div class="section-heading trust-heading">
+        <p class="section-kicker">Trusted by busy property teams</p>
+        <h2>Reliable turn support with real-world results behind it.</h2>
+        <p>
+          Make Ready Go helps apartment teams keep units moving with responsive service, cleaner presentation, and tighter turnaround windows.
+        </p>
+      </div>
+
+      <div class="trust-stats" aria-label="Company results">
+        @for (stat of trustStats; track stat.label) {
+          <article class="trust-stat-card">
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <section class="proof-strip" aria-label="Reasons to trust Make Ready Go">
     @for (item of proofItems; track item.title) {
       <div class="proof-item">
