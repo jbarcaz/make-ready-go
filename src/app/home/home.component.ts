@@ -18,75 +18,75 @@ import { RouterLink } from "@angular/router";
 export class HomeComponent {
   readonly heroPoints = [
     "Serving San Antonio and surrounding communities",
-    "Built for apartment communities and property teams",
+    "Built for apartment communities and property managers",
     "Clear quotes and responsive follow-through",
   ];
 
   readonly metrics = [
-    { value: "24/7", label: "outsourcing support for busy property teams" },
-    { value: "Fast", label: "turn execution without vendor chasing" },
-    { value: "Clear", label: "communication from request to completion" },
+    { value: "24/7", label: "support for busy property teams" },
+    { value: "Fast", label: "unit-turn help without vendor chasing" },
+    { value: "Clear", label: "communication from quote to completion" },
   ];
 
   readonly proofItems = [
     {
       icon: "schedule",
-      title: "Faster path to move-in ready",
-      description: "Reduce delay and keep units moving toward lease-ready condition.",
+      title: "Turn units faster",
+      description: "Keep vacant units moving toward make-ready and move-in without unnecessary delay.",
     },
     {
       icon: "verified_user",
-      title: "More confidence in the process",
-      description: "Know the scope, pricing, and next steps without constant follow-up.",
+      title: "Know what is happening",
+      description: "Get clear scope, pricing, and next steps instead of chasing for updates.",
     },
     {
       icon: "apartment",
-      title: "Built for multifamily operations",
-      description: "Support designed around property managers, apartment teams, and occupancy pressure.",
+      title: "Built for multifamily teams",
+      description: "Designed around occupancy pressure, leasing deadlines, and property operations.",
     },
     {
       icon: "support_agent",
-      title: "Professional communication",
-      description: "Dependable updates and responsive service that reflect well on your team.",
+      title: "Professional follow-through",
+      description: "Responsive service that helps your team look organized and in control.",
     },
   ];
 
   readonly steps = [
     {
-      title: "Tell us what needs to be turned",
+      title: "Send the unit and service details",
       description:
-        "Share the unit details, property address, and your timeline through the quote form.",
+        "Tell us the property, the service needed, and your timeline through the quote form.",
     },
     {
-      title: "Get a clear quote quickly",
+      title: "Review a clear quote",
       description:
-        "We review the request and respond with straightforward pricing and scope.",
+        "We follow up with straightforward pricing, scope, and next steps.",
     },
     {
-      title: "Turn the unit and keep leasing moving",
+      title: "Get the turn moving",
       description:
-        "Our team handles the work so your staff can stay focused on operations and resident experience.",
+        "Our team handles the work so your staff can stay focused on leasing, residents, and operations.",
     },
   ];
 
   readonly services = [
-    { icon: "home_repair_service", label: "Full-service make ready turns" },
-    { icon: "delete_sweep", label: "Trash out and debris removal" },
-    { icon: "park", label: "Grounds and exterior presentation" },
-    { icon: "night_shelter", label: "Trash valet support" },
-    { icon: "local_shipping", label: "Appliance moving and setup" },
+    { icon: "home_repair_service", label: "Full-service apartment make ready turns" },
+    { icon: "delete_sweep", label: "Trash out and bulk debris removal" },
+    { icon: "park", label: "Grounds cleanup and exterior presentation" },
+    { icon: "night_shelter", label: "Trash valet support for apartment communities" },
+    { icon: "local_shipping", label: "Appliance moving and setup support" },
   ];
 
   readonly faqs = [
     {
       question: "Who is Make Ready Go for?",
       answer:
-        "We work with property managers, apartment communities, and multifamily teams that need units turned quickly and professionally.",
+        "We work with property managers, apartment communities, and multifamily teams that need vacant units turned quickly and professionally.",
     },
     {
       question: "What makes your service different?",
       answer:
-        "We focus on speed, communication, and dependable follow-through so your team spends less time chasing vendors and more time leasing units.",
+        "We focus on speed, clear communication, and dependable follow-through so your team spends less time chasing vendors and more time getting units leased.",
     },
   ];
 }
