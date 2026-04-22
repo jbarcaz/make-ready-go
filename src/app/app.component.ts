@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class AppComponent {
   mobileMenuOpen = false;
   isDarkMode = false;
+  readonly currentYear = new Date().getFullYear();
 
   constructor(@Inject(DOCUMENT) private readonly document: Document) {
     this.initializeTheme();
