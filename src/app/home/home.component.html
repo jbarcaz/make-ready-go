@@ -77,6 +77,40 @@
     </div>
   </section>
 
+  <section class="content-section certificate-section compact-section">
+    <div class="certificate-copy">
+      <p class="section-kicker">Credentials</p>
+      <h2>Professional certifications that add confidence before the work even starts.</h2>
+      <p>
+        We put recognized credentials front and center so property teams can quickly see the compliance and safety training behind the service.
+      </p>
+    </div>
+
+    <div class="certificate-grid" aria-label="Professional certifications">
+      <div class="certificate-grid-headings" aria-hidden="true">
+        @for (certificate of certifications; track certificate.title) {
+          <h3>{{ certificate.title }}</h3>
+        }
+      </div>
+
+      @for (certificate of certifications; track certificate.title) {
+        <article class="certificate-card">
+          <div class="certificate-frame">
+            <img
+              [src]="certificate.image"
+              [alt]="certificate.alt"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="certificate-card-copy">
+            <p>{{ certificate.detail }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
   <app-google-reviews></app-google-reviews>
 
   <section class="content-section trust-section">

@@ -59,6 +59,21 @@ export class HomeComponent {
     { value: "San Antonio", label: "service area for apartment communities and multifamily teams" },
   ];
 
+  readonly certifications = [
+    {
+      image: "assets/certificate.jpeg",
+      alt: "EPA Section 608 Universal Certification under the Clean Air Act",
+      title: "EPA 608 Universal",
+      detail: "Certified refrigerant handling for small appliance, high-pressure, and low-pressure systems.",
+    },
+    {
+      image: "assets/certificate2.jpeg",
+      alt: "Mold Awareness certification for identifying mold issues and promoting safe healthy environments",
+      title: "Mold Awareness",
+      detail: "Training to identify mold issues and support healthier interior environments.",
+    },
+  ];
+
   readonly benefits = [
     {
       icon: "bolt",
