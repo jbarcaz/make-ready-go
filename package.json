@@ -1,5 +1,5 @@
 {
-  "name": "angular21-app",
+  "name": "angular21-app", 
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
