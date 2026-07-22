@@ -70,6 +70,29 @@
   line-height: 1.62;
 }
 
+.service-area-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 11px 14px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface-accent) 78%, transparent);
+  border: 1px solid rgba(31, 95, 174, 0.16);
+  color: var(--heading);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.service-area-banner mat-icon {
+  color: var(--primary);
+  flex: 0 0 auto;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

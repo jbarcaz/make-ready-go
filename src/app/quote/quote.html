@@ -29,6 +29,11 @@
       <span>Project Details</span>
     </div>
 
+    <div class="service-area-banner">
+      <mat-icon>location_on</mat-icon>
+      <span>Make Ready Go currently operates within Texas.</span>
+    </div>
+
     <form
       class="quote-form"
       #quoteForm="ngForm"
@@ -104,6 +109,21 @@
               Property address is required
             </mat-error>
           </mat-form-field>
+
+          <mat-form-field appearance="outline" class="grid-item grid-span-2">
+            <mat-label>Property State</mat-label>
+            <mat-select name="propertyState" ngModel required>
+              <mat-option value="Texas">Texas</mat-option>
+              <mat-option value="Outside Texas">Outside Texas</mat-option>
+            </mat-select>
+            <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['propertyState']?.touched) && quoteForm.controls['propertyState']?.invalid">
+              Select a property state
+            </mat-error>
+          </mat-form-field>
+
+          <p class="area-warning grid-span-2" *ngIf="quoteForm.controls['propertyState']?.value === 'Outside Texas'">
+            We only operate within Texas right now, so this quote request cannot be submitted.
+          </p>
         </div>
       </div>
 
@@ -187,7 +207,7 @@
         <p class="submit-note">Once you send this, we will review the request and follow up with pricing and next steps.</p>
 
         <div class="button-row">
-          <button class="submit-btn" type="submit" [disabled]="loading || quoteForm.invalid">
+          <button class="submit-btn" type="submit" [disabled]="loading || quoteForm.invalid || quoteForm.controls['propertyState']?.value === 'Outside Texas'">
             {{ loading ? 'Sending...' : 'Request My Quote' }}
           </button>
         </div>

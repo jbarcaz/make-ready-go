@@ -66,6 +66,12 @@ export class Quote {
       return;
     }
 
+    if (form.value.propertyState !== 'Texas') {
+      this.success = false;
+      this.error = false;
+      return;
+    }
+
     // Honeypot spam protection
     if (form.value.companyTrap) {
       return;
@@ -86,6 +92,7 @@ export class Quote {
           `Company: ${form.value.company}\n` +
           `Email: ${form.value.email}\n` +
           `Property Address: ${form.value.propertyAddress}\n` +
+          `Property State: ${form.value.propertyState}\n` +
           `Service Type: ${form.value.serviceType}\n` +
           `Bedrooms: ${form.value.bedrooms}\n` +
           `Timeline/Urgency: ${form.value.timeline}\n` +

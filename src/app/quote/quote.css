@@ -105,6 +105,26 @@
   gap: 1rem;
 }
 
+.service-area-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 1rem;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface-accent) 78%, transparent);
+  border: 1px solid rgba(31, 95, 174, 0.16);
+  color: var(--heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.service-area-banner mat-icon {
+  color: var(--primary);
+  flex: 0 0 auto;
+}
+
 .form-block {
   display: grid;
   gap: 0.95rem;
@@ -131,6 +151,18 @@
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.5;
+}
+
+.area-warning {
+  margin: -6px 0 0;
+  padding: 11px 12px;
+  border-radius: 14px;
+  background: color-mix(in srgb, #f6c453 16%, var(--surface));
+  border: 1px solid color-mix(in srgb, #b7791f 28%, transparent);
+  color: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.45;
 }
 
 .form-grid {

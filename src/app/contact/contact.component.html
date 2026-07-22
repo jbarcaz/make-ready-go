@@ -26,6 +26,11 @@
           <p>Share a few details and we will get back to you with next steps.</p>
         </div>
 
+        <div class="service-area-banner">
+          <mat-icon>location_on</mat-icon>
+          <span>Make Ready Go currently operates within Texas.</span>
+        </div>
+
         <form
           class="contact-form"
           #contactForm="ngForm"
@@ -79,6 +84,22 @@
                 Enter a valid phone number
               </mat-error>
             </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Service Location</mat-label>
+              <mat-select name="serviceArea" ngModel required>
+                <mat-option value="Texas">Texas</mat-option>
+                <mat-option value="Outside Texas">Outside Texas</mat-option>
+              </mat-select>
+              <mat-icon matPrefix>location_on</mat-icon>
+              <mat-error *ngIf="contactForm.submitted && contactForm.controls['serviceArea']?.invalid">
+                Select a service location
+              </mat-error>
+            </mat-form-field>
+
+            <p class="area-warning" *ngIf="contactForm.controls['serviceArea']?.value === 'Outside Texas'">
+              We only operate within Texas right now, so this request cannot be submitted.
+            </p>
           </div>
 
           <div class="form-section">
@@ -112,7 +133,7 @@
                 mat-flat-button
                 class="submit-btn"
                 type="submit"
-                [disabled]="loading"
+                [disabled]="loading || contactForm.invalid || contactForm.controls['serviceArea']?.value === 'Outside Texas'"
               >
                 {{ loading ? 'Sending…' : 'Request a Quick Call Back' }}
               </button>

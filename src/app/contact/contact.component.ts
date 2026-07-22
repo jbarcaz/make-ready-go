@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import emailjs from 'emailjs-com';
 
 @Component({
@@ -18,7 +19,8 @@ import emailjs from 'emailjs-com';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
@@ -31,12 +33,17 @@ export class ContactComponent {
   phone = '';
 
   sendEmail(form: NgForm): void {
-    // ❌ Stop if invalid
     if (form.invalid) {
       return;
     }
 
-    // 🛡 Honeypot (spam protection)
+    if (form.value.serviceArea !== 'Texas') {
+      this.success = false;
+      this.error = false;
+      return;
+    }
+
+    // Honeypot spam protection
     if (form.value.company) {
       return;
     }
@@ -51,7 +58,9 @@ export class ContactComponent {
       {
         name: form.value.name,
         phone: form.value.phone,
-        message: form.value.message
+        message:
+          `Service Area: ${form.value.serviceArea}\n\n` +
+          form.value.message
       },
       'HRChD0YVgF_H1qNoN'
     )
