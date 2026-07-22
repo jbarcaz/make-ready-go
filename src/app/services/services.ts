@@ -24,9 +24,9 @@ export class Services {
       description: 'Exterior cleaning and presentation support that helps the property show better.',
     },
     {
-      title: 'Trash Valet',
-      description: 'Reliable scheduled door-to-door support that adds convenience and consistency.',
-    },
+  title: 'Housekeeping',
+  description: 'Professional cleaning and detailing services to keep units spotless and ready to show.',
+},
     {
       title: 'Appliance Moving',
       description: 'Safe, efficient appliance handling and relocation for turn and maintenance needs.',
